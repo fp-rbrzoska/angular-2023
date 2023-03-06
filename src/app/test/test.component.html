@@ -1,1 +1,11 @@
-<p>test works!</p>
+<div>
+  <input #myInput>
+  <p class="red-text">{{ myTestString | uppercase }} {{ today | date : 'fullDate' }}</p>
+  <pre>
+    {{ myInput.value }}
+  </pre>
+  <fp-test-child [childData]="myTestString" (changeChildData)="handleChangeChildData($event)"></fp-test-child>
+  <!-- <fp-test-child childData="dasdsad"></fp-test-child> -->
+  <button>Click</button>
+</div>
+

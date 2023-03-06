@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { TestChildComponent } from './test-child/test-child.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     HomeComponent,
     ContactComponent,
     PageNotFoundComponent,
-    NavigationComponent
+    NavigationComponent,
+    TestChildComponent
   ],
   imports: [
     BrowserModule,
