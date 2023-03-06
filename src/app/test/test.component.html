@@ -6,6 +6,15 @@
   </pre>
   <fp-test-child [childData]="myTestString" (changeChildData)="handleChangeChildData($event)"></fp-test-child>
   <!-- <fp-test-child childData="dasdsad"></fp-test-child> -->
-  <button>Click</button>
+  <button (click)="handleClickToggleBoxBtn()">Toggle box</button>
 </div>
+<div class="blue-box" *ngIf="showBox">BOX</div>
+<pre>
+  {{ showBox | json}}
+</pre>
 
+<div>
+  <ul>
+    <li class="list-item" *ngFor="let user of users" [ngClass]="{ 'red-text': user.age > 73 }">{{user.name}} {{user.age}}</li>
+  </ul>
+</div>

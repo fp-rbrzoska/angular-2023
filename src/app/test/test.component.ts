@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
+import { User } from '../models/User';
 
 @Component({
   selector: 'fp-test',
@@ -7,10 +8,19 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class TestComponent {
 
+  showBox = false;
   today = new Date();
-  myTestString = 'Hello!'
+  myTestString = 'Hello!';
+  users: User[] = [
+    { name: 'Alojzy', age: 72 },
+    { name: 'Jarosław', age: 75 }
+  ]
 
   handleChangeChildData(str: string) {
   console.log('polecial event', str)
+  }
+
+  handleClickToggleBoxBtn() {
+    this.showBox =!this.showBox;
   }
 }
