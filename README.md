@@ -5,9 +5,11 @@ https://github.com/coreybutler/nvm-windows
 Angular dev tools plugin
 https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh
 
-
 custom preloading:
 https://www.npmjs.com/package/ngx-quicklink
+
+Rxjs in angular
+https://angular.io/guide/rx-library
 
 # ZADANIA
 1. Stworzyc komponenty HomeComponent, ContactComponent za pomoca CLI
