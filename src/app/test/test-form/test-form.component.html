@@ -1,0 +1,6 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+testdData: <input formControlName="testData">
+<button>Submit</button>
+</form>
+<pre>{{ myForm.value | json }}</pre>
+<pre>{{ myForm.get('testData')?.errors | json }}</pre>

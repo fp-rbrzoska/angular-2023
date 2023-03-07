@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class TestService {
@@ -21,10 +21,11 @@ export class TestService {
     this._counterSubj.next(this._counterSubj.value + 1)
   }
 
-  getTestData() {
+  getTestData(): Observable<{ testData: number}> {
     return this._http.get<{ testData: number}>('http://localhost:3000/test')
   }
-  fetchTestData() {
+  
+  fetchTestData(): void {
     this._http.get<{ testData: number}>('http://localhost:3000/test').subscribe( v => {
   this._testDataSubj.next(v)})
   }
