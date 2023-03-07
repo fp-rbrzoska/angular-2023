@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../models/User';
 import { TestService } from './test.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'fp-test',
@@ -9,6 +10,7 @@ import { TestService } from './test.service';
 })
 export class TestComponent {
 
+  counter$: Observable<number>;
   showBox = false;
   today = new Date();
   myTestString = 'Hello!';
@@ -17,11 +19,10 @@ export class TestComponent {
     { name: 'Jarosław', age: 75 }
   ];
 
-  constructor(private _testService: TestService) {    
-    _testService.incrementCounter();   
-    _testService.incrementCounter();   
-    _testService.incrementCounter();
-    console.log(_testService.counter)
+  constructor(private _testService: TestService) {   
+    this.counter$ = _testService.counter$;
+
+    this.counter$.subscribe(v => console.log('counter: ' + v))
   }
 
   handleChangeChildData(str: string) {
@@ -29,6 +30,7 @@ export class TestComponent {
   }
 
   handleClickToggleBoxBtn() {
+    this._testService.incrementCounter()
     this.showBox =!this.showBox;
   }
 }
