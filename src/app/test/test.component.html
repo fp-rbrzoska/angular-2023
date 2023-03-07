@@ -1,20 +1,30 @@
-<div>
-  <input #myInput>
-  <p class="red-text">{{ myTestString | uppercase }} {{ today | date : 'fullDate' }}</p>
-  <pre>
-    {{ myInput.value }}
-  </pre>
-  <fp-test-child [childData]="myTestString" (changeChildData)="handleChangeChildData($event)"></fp-test-child>
-  <!-- <fp-test-child childData="dasdsad"></fp-test-child> -->
-  <button (click)="handleClickToggleBoxBtn()">Toggle box</button>
-</div>
-<div class="blue-box" *ngIf="showBox">BOX</div>
-<pre>
-  {{ showBox | json}}
-</pre>
 
-<div>
-  <ul>
-    <li class="list-item" *ngFor="let user of users" [ngClass]="{ 'red-text': user.age > 73 }">{{user.name}} {{user.age}}</li>
-  </ul>
-</div>
+<ng-container *ngIf="counter$ | async as counter; else onlyToggleBtn">
+  <div>
+    <input #myInput>
+    <p class="red-text">{{ myTestString | uppercase }} {{ today | date : 'fullDate' }}</p>
+    <pre>
+      {{ myInput.value }}
+    </pre>
+    <fp-test-child [childData]="myTestString" (changeChildData)="handleChangeChildData($event)"></fp-test-child>
+    <!-- <fp-test-child childData="dasdsad"></fp-test-child> -->
+    <button (click)="handleClickToggleBoxBtn()">Toggle box</button>
+  </div>
+  <div class="blue-box" *ngIf="showBox">BOX</div>
+  <pre>
+    {{ showBox | json}}
+  </pre>
+  <div>Counter {{ counter }}</div>
+  <div>
+    <ul>
+      <ng-container *ngFor="let user of users">
+        <li>user</li>
+        <li class="list-item" [ngClass]="{ 'red-text': user.age > 73 }">{{user.name}} {{user.age}}</li>
+
+      </ng-container>
+    </ul>
+  </div>
+</ng-container>
+<ng-template #onlyToggleBtn>
+  <button (click)="handleClickToggleBoxBtn()">Toggle box</button>
+</ng-template>
