@@ -12,6 +12,7 @@ export class TestComponent implements OnDestroy {
 
   private _subscription = new Subscription();
   counter$: Observable<number>;
+  testData$: Observable<null | { testData: number}>;
   showBox = false;
   today = new Date();
   myTestString = 'Hello!';
@@ -22,6 +23,11 @@ export class TestComponent implements OnDestroy {
 
   constructor(private _testService: TestService) {   
     this.counter$ = _testService.counter$.pipe(share());
+    this.testData$ = _testService.testData$;
+    _testService.fetchTestData();
+
+    
+    _testService.getTestData().subscribe(v => console.log(v))
 
     this._subscription = this.counter$.subscribe(v => console.log('counter: ' + v))
   }

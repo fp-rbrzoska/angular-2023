@@ -1,4 +1,4 @@
-
+<ng-container *ngIf="testData$ | async as data; else loader">{{data | json}}</ng-container>
 <ng-container *ngIf="counter$ | async as counter; else onlyToggleBtn">
   <div>
     <input #myInput>
@@ -28,3 +28,4 @@
 <ng-template #onlyToggleBtn>
   <button (click)="handleClickToggleBoxBtn()">Toggle box</button>
 </ng-template>
+<ng-template #loader>Loading...</ng-template>
