@@ -23,3 +23,4 @@ podpowiedz: https://angular.io/guide/router-tutorial#using-angular-routes-in-a-s
 7. W module dodaj następujące komponenty: ProductList, ProductItem, ProductDetail, ProductAdd, ProductEdit, ProductForm
 8. Dodaj routing /products -> ProductList, /products/add -> ProductAdd, /products/edit/:id -> ProductEdit, /products/:id -> ProductDetail
 9. W komponencie ProductsList stwórz kolekcję 3 produktów zgodnych z interfejsem. Wyswietl prostą listę produktów zawierających nazwe i cenę. Wyswietlanie produktu zaimplementuj w ProductItem do którego przekazuj za pomocą Inputa `[product]` pojedynczy produkt. Użyj ngFor żeby wyswietlic tyle komponentów productItem ile jest ich w kolekcji.
+10. Stwórz productsService, zarejestruj go w productsModule i przenieś dane z komponentu productList do serwisu. Wykorzystaj dane z serwisu w komponencie.

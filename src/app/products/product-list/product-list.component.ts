@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'fp-product-list',
@@ -8,9 +9,9 @@ import { Product } from 'src/app/models/Product';
 })
 export class ProductListComponent {
 
-  products: Product[] = [
-    { id: '1', name: 'Prod1', price: 10.99 },
-    { id: '2', name: 'Prod2', price: 100.99 },
-    { id: '3', name: 'Prod3', price: 1.99 }
-  ]
+  products?: Product[];
+
+  constructor( private _productsService: ProductService) {
+    this.products = _productsService.products;
+  }
 }

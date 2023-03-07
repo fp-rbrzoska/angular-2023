@@ -9,6 +9,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { TestService } from '../test/test.service';
+import { ProductService } from './product.service';
 
 
 @NgModule({
@@ -24,6 +25,6 @@ import { TestService } from '../test/test.service';
     CommonModule,
     ProductsRoutingModule
   ],
-  providers: []
+  providers: [ProductService]
 })
 export class ProductsModule { }
