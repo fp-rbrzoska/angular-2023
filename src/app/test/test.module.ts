@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TestRoutingModule } from './test-routing.module';
 import { TestComponent } from './test.component';
 import { TestChildComponent } from './test-child/test-child.component';
+import { TestService } from './test.service';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { TestChildComponent } from './test-child/test-child.component';
   imports: [
     CommonModule,
     TestRoutingModule
-  ]
+  ],
+  providers: [TestService]
 })
 export default class TestModule { }

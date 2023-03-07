@@ -24,6 +24,6 @@ import { TestService } from '../test/test.service';
     CommonModule,
     ProductsRoutingModule
   ],
-  providers: [TestService]
+  providers: []
 })
 export class ProductsModule { }
