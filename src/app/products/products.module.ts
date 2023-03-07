@@ -8,6 +8,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductItemComponent } from './product-item/product-item.component';
+import { TestService } from '../test/test.service';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
   imports: [
     CommonModule,
     ProductsRoutingModule
-  ]
+  ],
+  providers: [TestService]
 })
 export class ProductsModule { }
