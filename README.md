@@ -11,6 +11,15 @@ https://www.npmjs.com/package/ngx-quicklink
 Rxjs in angular
 https://angular.io/guide/rx-library
 
+rxjs
+https://rxjs.dev/
+https://www.learnrxjs.io/
+
+
+stackblitz
+https://stackblitz.com/
+
+
 # ZADANIA
 1. Stworzyc komponenty HomeComponent, ContactComponent za pomoca CLI
 `npx ng g c nazwa-komponentu`

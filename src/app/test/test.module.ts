@@ -5,11 +5,12 @@ import { TestRoutingModule } from './test-routing.module';
 import { TestComponent } from './test.component';
 import { TestChildComponent } from './test-child/test-child.component';
 import { TestService } from './test.service';
+import { RxTestComponent } from './rx-test/rx-test.component';
 
 
 @NgModule({
   declarations: [
-  TestComponent, TestChildComponent
+  TestComponent, TestChildComponent, RxTestComponent
 ],
   imports: [
     CommonModule,
